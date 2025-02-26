@@ -1,23 +1,11 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import ProjectsSection from './components/ProjectsSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import '../styles/global.css';
+import Image from "next/image";
 
-const App: React.FC = () => {
+export default function Home() {
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
-    </div>
+   <div>
+    
+   </div>
   );
-};
+}
 
 export default App;
