@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFICCI - Empowering Agricultural Excellence</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2A5D34;
+            --accent-gold: #D4AF37;
+            --light-beige: #F5F0E6;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2') center/cover;
+            height: 80vh;
+            color: white;
+        }
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gold);
+            border-radius: 12px;
+        }
+        .section-title {
+            color: var(--primary-green);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="logo-placeholder.png" alt="EFICCI Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#vision">Vision & Mission</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-4 mb-4 fw-bold">Transforming Indian Agriculture Through Global Trade</h1>
+        <p class="lead">Empowering 20,000+ farmers and 500+ FPOs to become global exporters</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">About EFICCI</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449" alt="Farmers" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <p class="lead">The premier NGO bridging Indian agriculture with global markets</p>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><span class="icon-box d-inline-flex align-items-center justify-content-center me-3"><i class="fas fa-tractor text-white"></i></span> Direct farm-to-market access</li>
+                    <li class="mb-3"><span class="icon-box d-inline-flex align-items-center justify-content-center me-3"><i class="fas fa-globe-asia text-white"></i></span> Presence in 15+ countries</li>
+                    <li class="mb-3"><span class="icon-box d-inline-flex align-items-center justify-content-center me-3"><i class="fas fa-award text-white"></i></span> Promoting GI-tagged products globally</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission -->
+<section id="vision" class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Our Vision</h3>
+                        <p class="card-text">To position Indian agricultural products as world leaders in international markets while driving sustainable economic growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Our Mission</h3>
+                        <p class="card-text">Empower farmers with export training, market insights, and global market access through strategic partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-graduation-cap fa-2x text-white"></i>
+                        </div>
+                        <h5>Capacity Building</h5>
+                        <p>Export training programs, technical support, and governance workshops</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-handshake fa-2x text-white"></i>
+                        </div>
+                        <h5>Market Linkages</h5>
+                        <p>Global buyer networks and participation in international trade fairs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-chart-line fa-2x text-white"></i>
+                        </div>
+                        <h5>Policy Advocacy</h5>
+                        <p>Shaping export-friendly policies through government collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Contact Us</h2>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="icon-box mx-auto mb-3">
+                    <i class="fas fa-map-marker-alt fa-2x text-white"></i>
+                </div>
+                <h5>Head Office</h5>
+                <p>18-G, Gurukrupa Apartment<br>Somalwada Square, Nagpur<br>Maharashtra - 440025</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon-box mx-auto mb-3">
+                    <i class="fas fa-envelope fa-2x text-white"></i>
+                </div>
+                <h5>Email</h5>
+                <p>exim.ficci@gmail.com<br>e-ficci@outlook.com</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="icon-box mx-auto mb-3">
+                    <i class="fas fa-phone fa-2x text-white"></i>
+                </div>
+                <h5>Phone</h5>
+                <p>+91 9011551393</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</body>
+</html>
