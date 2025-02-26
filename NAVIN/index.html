@@ -12,8 +12,343 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS Animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="style.css">
-    
+    <style>
+        :root {
+            --primary-green: #1E5631;
+            --secondary-green: #4A7856;
+            --accent-gold: #D4AF37;
+            --light-beige: #F5F0E6;
+            --dark-text: #333333;
+            --light-text: #F9F9F9;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .navbar {
+            background: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            padding: 5px 0;
+        }
+        
+        .navbar-scrolled .navbar-brand img {
+            height: 35px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-text);
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2') center/cover no-repeat fixed;
+            height: 90vh;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            border-color: var(--primary-green);
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-light {
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary-green);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+        }
+        
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card .icon-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .about-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-list li {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .about-list .icon-box {
+            margin-right: 20px;
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+        
+        .contact-section {
+            background-color: var(--light-beige);
+        }
+        
+        .contact-info-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            border-radius: 30px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        textarea.form-control {
+            border-radius: 15px;
+            min-height: 150px;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-green);
+        }
+        
+        .stats-section {
+            background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), 
+                        url('https://images.unsplash.com/photo-1464226184884-fa280b87c399') center/cover no-repeat;
+            color: white;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--accent-gold);
+        }
+        
+        footer {
+            background-color: #1A1A1A;
+            color: #999;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 999;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                text-align: center;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .about-list li {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .about-list .icon-box {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -34,7 +369,7 @@
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#achievements">Impact</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Brochure">Brochure</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pdf-download">Brochure</a></li>
             </ul>
         </div>
     </div>
@@ -79,156 +414,51 @@
 </section>
 
 <!-- About Section -->
-<section id="about-eficci" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5 display-5 fw-bold text-primary">About EXIM FARMER INDIAN CHAMBER OF COMMERCE AND INDUSTRY (EFICCI)</h2>
-
-        <!-- Row 1: Premier NGO -->
-        <div class="row align-items-center g-5 mb-5">
+<section id="about" class="py-5 bg-light">
+    <div class="container py-4">
+        <h2 class="section-title text-center">About EFICCI</h2>
+        <div class="row g-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449" 
-                     alt="Farmers Working" 
-                     class="img-fluid rounded-3 shadow-lg">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449" alt="Farmers" class="img-fluid">
+                </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <div class="ps-lg-4">
-                    <h3 class="mb-4">Premier Agricultural NGO</h3>
-                    <p class="lead text-muted mb-4">EFICCI bridges Indian farmers with global markets through innovative trade solutions and sustainable practices.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="feature-icon">
-                            <i class="fas fa-seedling"></i>
+                <h3 class="mb-4">The premier NGO bridging Indian agriculture with global markets</h3>
+                <p class="lead mb-4">EFICCI works to transform Indian agriculture by connecting farmers directly to international markets, promoting sustainable practices, and building export capacity.</p>
+                <ul class="list-unstyled about-list">
+                    <li>
+                        <div class="icon-box">
+                            <i class="fas fa-tractor fa-2x text-white"></i>
                         </div>
                         <div>
-                            <h5 class="mb-1">20,000+ Farmers Connected</h5>
-                            <p class="text-muted small">Direct access to international buyers</p>
+                            <h5>Direct Farm-to-Market Access</h5>
+                            <p>Eliminating middlemen to increase farmer income and ensure quality exports</p>
                         </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe"></i>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <i class="fas fa-globe-asia fa-2x text-white"></i>
                         </div>
                         <div>
-                            <h5 class="mb-1">15+ Countries Reached</h5>
-                            <p class="text-muted small">Global trade partnerships established</p>
+                            <h5>Global Presence</h5>
+                            <p>Established networks in 15+ countries across Asia, Europe, and North America</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Row 2: Mission (Reversed) -->
-        <div class="row align-items-center g-5 mb-5">
-            <div class="col-lg-6 order-lg-2" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2" 
-                     alt="Global Trade" 
-                     class="img-fluid rounded-3 shadow-lg">
-            </div>
-            <div class="col-lg-6 order-lg-1" data-aos="fade-right">
-                <div class="pe-lg-4">
-                    <h3 class="mb-4">Our Core Mission</h3>
-                    <p class="lead text-muted mb-4">Empowering Indian agriculture through:</p>
-                    <ul class="list-unstyled">
-                        <li class="d-flex mb-3">
-                            <div class="feature-icon me-3">
-                                <i class="fas fa-tractor"></i>
-                            </div>
-                            <div>
-                                <h5>Farm-to-Market Access</h5>
-                                <p class="text-muted small mb-0">Streamlined export channels</p>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-3">
-                            <div class="feature-icon me-3">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div>
-                                <h5>GI Tag Promotion</h5>
-                                <p class="text-muted small mb-0">Nagpur Orange, Waigaon Turmeric</p>
-                            </div>
-                        </li>
-                        <li class="d-flex">
-                            <div class="feature-icon me-3">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div>
-                                <h5>Market Expansion</h5>
-                                <p class="text-muted small mb-0">Gulf, Europe, USA markets</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Row 3: Global Presence -->
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6" data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1633934458251-c8322f9b5b1d" 
-                     alt="Global Network" 
-                     class="img-fluid rounded-3 shadow-lg">
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="ps-lg-4">
-                    <h3 class="mb-4">Global Footprint</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="p-3 bg-white rounded shadow-sm">
-                                <h5 class="text-primary mb-2">Dubai Hub</h5>
-                                <p class="small mb-0 text-muted">Middle East operations center</p>
-                            </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <i class="fas fa-award fa-2x text-white"></i>
                         </div>
-                        <div class="col-md-6">
-                            <div class="p-3 bg-white rounded shadow-sm">
-                                <h5 class="text-primary mb-2">500+ FPOs</h5>
-                                <p class="small mb-0 text-muted">Farmer Producer Organizations</p>
-                            </div>
+                        <div>
+                            <h5>GI-Tagged Product Promotion</h5>
+                            <p>Showcasing India's unique agricultural heritage products on the global stage</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="p-3 bg-white rounded shadow-sm">
-                                <h5 class="text-primary mb-2">SDG Alignment</h5>
-                                <p class="small mb-0 text-muted">UN Development Goals</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="p-3 bg-white rounded shadow-sm">
-                                <h5 class="text-primary mb-2">Training Programs</h5>
-                                <p class="small mb-0 text-muted">Export capacity building</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    .feature-icon {
-        background: #2d6a4f;
-        width: 50px;
-        height: 50px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .display-5 {
-        font-size: 2.5rem;
-        letter-spacing: -0.5px;
-    }
-    @media (max-width: 768px) {
-        .display-5 {
-            font-size: 2rem;
-        }
-        .feature-icon {
-            width: 40px;
-            height: 40px;
-        }
-    }
-    .shadow-lg {
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-</style>
 
 <!-- Vision & Mission -->
 <section id="vision" class="py-5">
@@ -242,10 +472,8 @@
                             <i class="fas fa-eye fa-2x text-white"></i>
                         </div>
                         <h3 class="card-title text-primary mb-4">Our Vision</h3>
-                        <p class="card-text text-justify">
-                            To be a transformative force in empowering farmers and stakeholders across the agri-value chain to become global exporters, aligning with the Sustainable Development Goals (SDGs) to drive inclusive economic growth, environmental sustainability, and global competitiveness, while positioning Indian products as world leaders in international markets.
-                        </p>
-                        
+                        <p class="card-text">To position Indian agricultural products as world leaders in international markets while driving sustainable economic growth for farming communities across India.</p>
+                        <p class="card-text mt-3">We envision a future where Indian farmers are recognized globally for their quality produce and sustainable practices.</p>
                     </div>
                 </div>
             </div>
@@ -256,10 +484,8 @@
                             <i class="fas fa-bullseye fa-2x text-white"></i>
                         </div>
                         <h3 class="card-title text-primary mb-4">Our Mission</h3>
-                        <p class="card-text text-justify">
-                            To empower farmers and agri-value chain stakeholders with export training, market insights, and technical support, aligning with the SDGs. We facilitate global market access, advocate for export-friendly policies, and strengthen governance and business capacity. Committed to sustainability and quality, we position Indian products as globally preferred.
-                        </p>
-                        
+                        <p class="card-text">Empower farmers with export training, market insights, and global market access through strategic partnerships and innovative solutions.</p>
+                        <p class="card-text mt-3">We are committed to building capacity among Farmer Producer Organizations and creating sustainable export channels that benefit both producers and consumers.</p>
                     </div>
                 </div>
             </div>
@@ -574,7 +800,7 @@
 </section>
 
 <!-- PDF Download Section -->
-<section id="Brochure" class="py-5 bg-light">
+<section id="pdf-download" class="py-5 bg-light">
     <div class="container py-4">
         <h2 class="section-title text-center">Download Our Brochure</h2>
         <p class="text-center mb-4">Get detailed information about our services by downloading our brochure.</p>
