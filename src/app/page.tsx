@@ -1,9 +1,23 @@
-import Image from "next/image";
+import React from 'react';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import ProjectsSection from './components/ProjectsSection';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import '../styles/global.css';
 
-export default function Home() {
+const App: React.FC = () => {
   return (
-   <div>
-    
-   </div>
+    <div className="App">
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
+      <ContactSection />
+      <Footer />
+    </div>
   );
-}
+};
+
+export default App;

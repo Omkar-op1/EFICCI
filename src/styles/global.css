@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #f4f4f4;
+}
+
+.about-section, .projects-section, .contact-section {
+  padding: 2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
