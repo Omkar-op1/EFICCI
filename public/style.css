@@ -43,6 +43,16 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   margin: 0 10px;
 }
+.navbar-brand img {
+  height: 100px;  /* Increase logo height */
+  width: auto;   /* Maintain aspect ratio */
+  margin-right: 15px; /* Spacing between logo and nav items */
+}
+.navbar-brand img {
+  height: 100px;
+}
+
+
 
 .nav-link:after {
   content: '';
