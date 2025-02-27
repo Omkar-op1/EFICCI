@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 10px;
 }
 .navbar-brand img {
-  height: 100px;  /* Increase logo height */
+  height: 50px;  /* Increase logo height */
   width: auto;   /* Maintain aspect ratio */
   margin-right: 15px; /* Spacing between logo and nav items */
 }
