@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-section {
-  background-image: url('image/img1.jpg');
+  background-image: url('img1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
