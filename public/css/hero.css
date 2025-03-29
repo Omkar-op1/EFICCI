@@ -1,0 +1,34 @@
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../img1.jpg') center/cover no-repeat fixed;
+    height: 90vh;
+    color: white;
+    position: relative;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .btn-outline-light {
+    border-radius: 30px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .stats-section {
+    background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), 
+                url('https://images.unsplash.com/photo-1464226184884-fa280b87c399') center/cover no-repeat;
+    color: white;
+}
+  
+  @media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+        text-align: center;
+    }
+  }

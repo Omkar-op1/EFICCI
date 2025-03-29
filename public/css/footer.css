@@ -1,0 +1,78 @@
+/* Footer Styles */
+footer {
+    background-color: #1A1A1A;
+    color: #999;
+    padding: 70px 0 20px;
+  }
+  
+  .footer-logo {
+    margin-bottom: 25px;
+  }
+  
+  .footer-logo img {
+    height: auto;
+    max-width: 180px;
+  }
+  
+  .footer-links h5 {
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--accent-gold);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    background-color: var(--accent-gold);
+    color: white;
+  }

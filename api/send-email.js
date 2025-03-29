@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ success: false, message: 'Method Not Allowed' });
     }
 
-    const { name, email, message } = req.body;
+    const { name, email, message  } = req.body;
 
     // Configure Nodemailer
     const transporter = nodemailer.createTransport({

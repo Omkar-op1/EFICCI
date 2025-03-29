@@ -1,0 +1,74 @@
+.service-card .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+  }
+  
+  .service-card {
+    border: none;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  /* Services Carousel */
+.services-carousel {
+    position: relative;
+    padding: 0 50px;
+}
+
+.services-carousel .owl-stage {
+    display: flex;
+    padding: 20px 0;
+}
+
+.services-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.services-carousel .owl-prev,
+.services-carousel .owl-next {
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-green) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.services-carousel .owl-prev {
+    left: -100px; /* Moves left arrow out of card area */
+}
+.services-carousel .owl-prev:hover,
+.services-carousel .owl-next:hover {
+    background: var(--secondary-green) !important;
+}
+
+.service-card {
+    padding: 30px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+@media (max-width: 768px) {
+    .services-carousel {
+        padding: 0 30px;
+    }
+}
