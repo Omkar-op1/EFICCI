@@ -19,10 +19,11 @@ export default async function handler(req, res) {
     try {
         await transporter.sendMail({
             from: '"No Reply" <your_no_reply_email@gmail.com>',
-            to: 'ordhatrak855@gmail.com',
+            to: 'ordhatrak855@gmail.com , e-ficci@outlook.com , exim.ficci@gmail.com',
             subject: 'New Contact Form Submission',
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
         });
+        
 
         res.status(200).json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {

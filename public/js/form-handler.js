@@ -15,7 +15,8 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
         });
 
         const result = await response.json();
-        alert(result.message);
+        console.log(result.message);
+        alert("Thanks you for message, we will contact you soon");
 
         if (result.success) {
             this.reset();
